@@ -1,0 +1,14 @@
+/* プライマリキーの状態を確認する
+プライマリキー名、構成カラム、インデックス名、インデックスの表領域 などを確認する SQL
+*/
+
+select 
+  c.table_name, c.constraint_name, c.status cc_status,
+  cc.position, cc.column_name, 
+  ix.index_name, ix.uniqueness, ix.tablespace_name, ix.visibility, ix.status
+from user_indexes ix,
+  user_constraints c, user_cons_columns cc
+where
+  ix.table_name in ('MY_TABLE') and c.constraint_type = 'P'
+  and ix.index_name = c.index_name and c.constraint_name = cc.constraint_name
+order by cc.position;

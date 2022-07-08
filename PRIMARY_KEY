@@ -1,0 +1,19 @@
+/* PRIMARY KEY
+主キーとも呼ばれる。
+テーブル内でNULLの非許容と重複の禁止する列を指定する。
+
+sample
+CREATE TABLE books{
+    book_id PRIMARY KEY,//この中に入るデータが主キー
+    name VARCHAR(255),
+    author VARCHAR(255),
+    publication_date DATETIME
+};
+*/
+
+//注意
+indexと混同されがちだが別のもの
+混同されがちな理由として主キーの説明に検索しやすくなるというものがある。
+indexを貼ることによって検索が高速化するという機能と混同される。
+indexは検索の高速化を行い、
+PRIMARY KEYは列に必ずデータが入り、ユニークである補償を行う。

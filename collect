@@ -1,0 +1,41 @@
+//A
+//B
+//C
+//D
+//E
+//F
+//G
+//H
+//I
+//J
+//K
+//L
+//M
+//N
+//O
+//P
+
+/* PRIMARY KEY
+主キーとも呼ばれる。
+テーブル内でNULLの非許容と重複の禁止する列を指定する。
+
+sample
+CREATE TABLE books{
+    book_id PRIMARY KEY,//この中に入るデータが主キー
+    name VARCHAR(255),
+    author VARCHAR(255),
+    publication_date DATETIME
+};
+*/
+
+
+//Q
+//R
+//S
+//T
+//U
+//V
+//W
+//X
+//Y
+//Z
