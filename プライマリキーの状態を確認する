@@ -12,3 +12,18 @@ where
   ix.table_name in ('MY_TABLE') and c.constraint_type = 'P'
   and ix.index_name = c.index_name and c.constraint_name = cc.constraint_name
 order by cc.position;
+
+//プライマリーキーの定義内容を確認する
+SELECT
+  col.table_name,
+  col.column_name
+FROM
+  USER_CONS_COLUMNS col
+    INNER JOIN USER_CONSTRAINTS con
+    ON col.constraint_name = con.constraint_name
+WHERE
+    con.table_name = 'MYTBL' --MYTBLテーブルの定義内容を確認する。
+AND con.constraint_type = 'P'
+ORDER BY
+  col.position
+;

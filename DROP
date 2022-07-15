@@ -1,0 +1,9 @@
+/* DROP
+テーブルの削除をする。
+
+書式
+DROP TABLE [IF EXISTS] tbl_name [, tbl_name] ...
+*/
+
+//sample
+drop table address; --addressテーブルの削除を行う。

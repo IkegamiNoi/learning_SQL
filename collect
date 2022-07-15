@@ -2,6 +2,21 @@
 //B
 //C
 //D
+
+/*
+テーブル内の全レコードを削除する。
+
+書式
+DELETE FROM テーブル名
+*/
+
+/* DROP
+テーブルの削除をする。
+
+書式
+DROP TABLE [IF EXISTS] tbl_name [, tbl_name] ...
+*/
+
 //E
 //F
 //G
@@ -13,6 +28,14 @@
 //M
 //N
 //O
+
+/* ORDER BY
+SELECT文の並び順を指定できる。
+
+書式
+SELECT カラム名 , ... FROM テーブル名 ORDER BY カラム名 [ASC | DESC];
+*/
+
 //P
 
 /* PRIMARY KEY
@@ -34,6 +57,20 @@ CREATE TABLE books{
 //S
 //T
 //U
+
+/* UPDATE
+レコードの更新を行う。
+
+書式：条件に合ったレコードのみを更新する。
+UPDATE (表名) SET (カラム名1) = (値1) WHERE (条件);
+
+書式：条件に合ったレコードのみを更新する。(複数カラム)
+UPDATE (表名) SET (カラム名1) = (値1), (カラム名2) = (値2) WHERE (条件);
+
+書式：全レコードを更新
+UPDATE (表名) SET (カラム名1) = (値1)
+*/
+
 //V
 //W
 //X

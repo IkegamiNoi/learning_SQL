@@ -1,0 +1,40 @@
+/* UPDATE
+レコードの更新を行う。
+
+書式：条件に合ったレコードのみを更新する。
+UPDATE (表名) SET (カラム名1) = (値1) WHERE (条件);
+
+書式：条件に合ったレコードのみを更新する。(複数カラム)
+UPDATE (表名) SET (カラム名1) = (値1), (カラム名2) = (値2) WHERE (条件);
+
+書式：全レコードを更新
+UPDATE (表名) SET (カラム名1) = (値1)
+*/
+
+//sample
+--1つの条件で更新内容を絞る
+UPDATE employees SET title = 'Mr.' WHERE gender = 'M'
+
+--複数の条件のどれかに当てはまる内容を更新する
+UPDATE employees SET title = 'Ms.' WHERE emp_no IN (10006, 10007, 10009)
+
+--テーブル内の別カラムを参照、連結して特定のカラムを更新する
+UPDATE employees SET name = CONCAT(first_name, last_name);
+
+--別テーブルを参照して更新を行う（副問合せを利用）
+--※副問合せは必ず１行のみ返すようにする。
+UPDATE employees SET employees.manager_name =
+( SELECT manager.manager_name FROM manager
+  WHERE employees.emp_no = manager.emp_no );
+
+--別テーブルを参照して更新を行う（結合を利用）
+UPDATE employees JOIN manager
+ON employees.emp_no = manager.emp_no
+SET employees.manager_name = manager.manager_name
+
+--CASEによる条件による書き込みの変化させる
+UPDATE employees SET employees.title =
+CASE employees.gender
+WHEN 'M' THEN 'Mr.'
+WHEN 'F' THEN 'Ms.'
+END;

@@ -1,0 +1,21 @@
+/* DELETE
+テーブル内の全レコードを削除する。
+
+書式
+DELETE FROM テーブル名
+*/
+
+//一部のレコードを削除する。
+/*
+WHERE句で対象を絞る。
+SELECT句と同様、WHERE句の中身は複数使うことも出来る。
+*/
+DELETE FROM テーブル名 WHERE カラム名 = 値
+
+//sample
+DELETE FROM users WHERE id = 10;
+DELETE FROM users like 'user%' //あいまい検索で該当レコードを削除。
+
+//注意
+DELETEする前にSELECT文を作って対象が合っているか確認する。
+「SELECT *」を「DELETE」に置き換えるだけで良い。

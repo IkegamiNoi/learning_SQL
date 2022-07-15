@@ -1,0 +1,35 @@
+/* ORDER BY
+SELECT文の並び順を指定できる。
+
+書式
+SELECT カラム名 , ... FROM テーブル名 ORDER BY カラム名 [ASC | DESC];
+*/
+
+//ASCとDESC
+ASC：昇順（デフォルト）
+DESC：降順
+
+//sample
+create table user(name text, old integer, address text);
+insert into user values('Yamada', 19, 'Tokyo');
+insert into user values('Andou', 34, 'Osaka');
+insert into user values('Kuwata', 26, 'Tokyo');
+insert into user values('Hoshi', 18, 'Tokyo');
+insert into user values('Suzuki', 27, 'Osaka');
+insert into user values('Yoshida', 31, 'Tokyo');
+insert into user values('Anzai', 28, 'Nagoya');
+insert into user values('Etou', 19, 'Tokyo');
+
+select * from user; --並び順を指定せずに検索。検索毎に並び順が違う可能性がある。
+select * from user order by old asc; --oldの昇順で並べる。
+select * from user order by old desc; --oldの降順で並べる。
+
+//複数のカラムでの並び替え（上記sampleで利用できる）
+/*
+「,」区切りで優先したい列から先に並べていく
+*/
+select * from user order by address asc, old asc; --addressで並べ、同一addressをold順に並べ替える。
+
+//NULL地の扱い。
+NULLS FIRST：NULLを先頭に配置
+NULLS LAST：NULLを最後
