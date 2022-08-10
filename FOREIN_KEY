@@ -1,0 +1,21 @@
+/* FOREIN_KEY
+外部キーを設定する
+
+書式
+foreign key (カラム名) references 結合先テーブル名 結合先カラム名
+*/
+
+//sample
+--departmentテーブル
+create table myschema.department (
+  name varchar(10) primary key
+);
+
+--staffテーブル
+--depnameとdepartmentテーブルのnameカラムを結合する。
+create table myschema.staff(
+  id integer, 
+  staffname varchar(10), 
+  depname varchar(10), 
+  foreign key (depname) references myschema.department(name)
+);

@@ -19,12 +19,47 @@ DROP TABLE [IF EXISTS] tbl_name [, tbl_name] ...
 
 //E
 //F
+
+/* FOREIN_KEY
+外部キーを設定する
+
+書式
+foreign key (カラム名) references 結合先テーブル名 結合先カラム名
+*/
+
 //G
+
+/* GREATEST
+引数から最大の値を求める。
+
+書式
+GREATEST ( expr_list )
+*/
+
 //H
 //I
+
+/* INSERT
+テーブルにデータを登録する
+
+書式：カラムを指定して値を登録する
+INSERT INTO テーブル名 (列名1, 列名2,...) VALUES (値1, 値2,...);
+
+書式：全てのカラムに値を登録する
+INSERT INTO テーブル名 VALUES (値1, 値2,...);
+*/
+
 //J
 //K
 //L
+
+/* LEAST
+引数から最小の値を求める。
+
+書式
+LEAST ( expr_list )
+*/
+
 //M
 //N
 //O

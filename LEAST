@@ -1,0 +1,21 @@
+/* LEAST
+引数から最小の値を求める。
+
+書式
+LEAST ( expr_list )
+*/
+
+//sample
+--数値の場合
+select LEAST(1,2,3,5,4,7,6) from dual;
+--結果 
+LEAST(1,2,3,5,4,7,6)
+--------------------
+                   1
+
+--文字列の場合('AAA'<'aaa'<'ABC'<'abc')
+select LEAST('AAA','aaa','abc','ABC') from dual;
+結果 
+LEAST
+------
+AAA

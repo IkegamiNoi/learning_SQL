@@ -1,0 +1,21 @@
+/* GREATEST
+引数から最大の値を求める。
+
+書式
+GREATEST ( expr_list )
+*/
+
+//sample
+--数値の場合
+select GREATEST(1,10,3,5,5,1,6) from dual;
+--結果 
+GREATEST(1,10,3,5,5,1,6)
+------------------------
+                      10
+
+--文字列の場合('aaa'>'Aaa'>'AAa'>'AAA')
+select GREATEST('AAA','AAa','Aaa','aaa') from dual;
+ --結果
+GREATE
+------
+aaa
