@@ -2,7 +2,7 @@
 外部キーを設定する
 
 書式
-foreign key (カラム名) references 結合先テーブル名 結合先カラム名
+foreign key (カラム名) references 結合先テーブル名(結合先カラム名)
 */
 
 //sample
