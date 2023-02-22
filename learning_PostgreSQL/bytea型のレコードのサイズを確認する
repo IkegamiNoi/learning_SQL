@@ -1,0 +1,2 @@
+bytea型のレコードのサイズを確認する
+SELECT octet_length(bytea型のカラム名) FROM テーブル名;

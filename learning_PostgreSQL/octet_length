@@ -1,0 +1,5 @@
+octet_length
+指定した引数のバイト列の長さを返す
+
+ex)mycolumnカラム内のバイト列の長さを返す。
+SELECT octet_length(mycolumn) FROM mytable;
